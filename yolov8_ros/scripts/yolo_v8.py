@@ -1,10 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import cv2
 import torch
 import rospy
 import numpy as np
+import os
 from ultralytics import YOLO
 from time import time
 
@@ -31,7 +32,8 @@ class Yolo_Dect:
         else:
             self.device = 'cuda'
 
-        self.model = YOLO(weight_path)
+#        self.model = YOLO(os.path.join(weight_path, 'yolov8s.pt'))
+        self.model = YOLO(os.path.join(weight_path, 'yolov8n.pt'))
         self.model.fuse()
 
         self.model.conf = conf
