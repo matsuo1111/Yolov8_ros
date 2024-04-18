@@ -33,7 +33,7 @@ class Yolo_Dect:
             self.device = 'cuda'
 
 #        self.model = YOLO(os.path.join(weight_path, 'yolov8s.pt'))
-        self.model = YOLO(os.path.join(weight_path, 'yolov8n.pt'))
+        self.model = YOLO(os.path.join(weight_path, 'yolov8m.pt'))
         self.model.fuse()
 
         self.model.conf = conf
